@@ -33,6 +33,7 @@
             monthCalendar2 = new MonthCalendar();
             button3 = new Button();
             textBox1 = new TextBox();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // button1
@@ -76,11 +77,20 @@
             textBox1.Size = new Size(726, 255);
             textBox1.TabIndex = 5;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(531, 352);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(182, 33);
+            comboBox1.TabIndex = 6;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1299, 501);
+            Controls.Add(comboBox1);
             Controls.Add(textBox1);
             Controls.Add(button3);
             Controls.Add(monthCalendar2);
@@ -99,5 +109,6 @@
         private MonthCalendar monthCalendar2;
         private Button button3;
         private TextBox textBox1;
+        private ComboBox comboBox1;
     }
 }
