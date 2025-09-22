@@ -1,0 +1,42 @@
+# --- ビルド成果物（毎回生成されるので不要） ---
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+*.dll
+*.exe
+*.app
+*.cache
+*.pdb
+*.mdb
+
+# --- Visual Studio 関連 ---
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# --- OS依存ファイル ---
+[Dd]esktop.ini
+[Tt]humbs.db
+*.DS_Store
+
+# --- 一時ファイル ---
+*.tmp
+*.bak
+*.log
+
+# --- パッケージ管理（再取得できるので不要） ---
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+# Node.js（もしフロントを使う場合）
+node_modules/
+
+# --- 秘密情報（APIキーなどは入れない） ---
+.env
+
+# --- メモ: Markdownファイルは除外しない ---
+# つまり *.md はGit管理対象になる（共有できる）
