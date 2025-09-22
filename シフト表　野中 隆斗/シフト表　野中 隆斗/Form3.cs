@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace シフト表_野中_隆斗
 {
@@ -15,6 +16,45 @@ namespace シフト表_野中_隆斗
         public Form3()
         {
             InitializeComponent();
+            LoadStaffToComboBox();
+        }
+
+        private void Save_btn_Click(object sender, EventArgs e)
+        {
+            DateTime selectedDate = monthCalendar2.SelectionStart;
+            label4.Text = selectedDate.ToString("yyyy年MM月dd日");
+        }
+
+        private void LoadStaffToComboBox()
+        {
+            string connectionString = "Server=PB-B0024029\\SORIMACHI2022;Database=nonaka;User ID=sa;Password=shoo0127;TrustServerCertificate=True;";
+            string query = "SELECT staff_id, staff_name FROM staff";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // 表示用列を追加（"1：山田太郎" など）
+                    dt.Columns.Add("DisplayText", typeof(string));
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        row["DisplayText"] = $"{row["staff_id"]}：{row["staff_name"]}";
+                    }
+
+                    comboBox1.DataSource = dt;
+                    comboBox1.DisplayMember = "DisplayText";  // 表示する文字列
+                    comboBox1.ValueMember = "staff_id";       // 内部的に選択されるID
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("エラー: " + ex.Message);
+            }
         }
     }
 }
