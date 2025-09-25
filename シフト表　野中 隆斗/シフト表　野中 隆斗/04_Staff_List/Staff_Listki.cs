@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace シフト表_野中_隆斗
 {
-    public partial class Staff_List : Form
+    public partial class Staff_Listki : Form
     {
-        public Staff_List()
+        public Staff_Listki()
         {
             InitializeComponent();
         }
