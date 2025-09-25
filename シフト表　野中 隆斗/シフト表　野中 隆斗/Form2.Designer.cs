@@ -73,6 +73,7 @@
             notificationbtn.TabIndex = 3;
             notificationbtn.Text = "シフト変更希望通知";
             notificationbtn.UseVisualStyleBackColor = true;
+            notificationbtn.Click += notificationbtn_Click;
             // 
             // END_btn
             // 

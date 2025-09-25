@@ -38,5 +38,12 @@ namespace シフト表_野中_隆斗
             this.Hide();
 
         }
+
+        private void notificationbtn_Click(object sender, EventArgs e)
+        {
+            Form_shift_change_desired_notification Shift_Change = new Form_shift_change_desired_notification();
+            Shift_Change.Show();
+            this.Hide();
+        }
     }
 }
