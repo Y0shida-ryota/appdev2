@@ -135,6 +135,7 @@
             deletion_btn.TabIndex = 11;
             deletion_btn.Text = "削除";
             deletion_btn.UseVisualStyleBackColor = true;
+            deletion_btn.Click += deletion_btn_Click;
             // 
             // Add_btn
             // 
@@ -144,6 +145,7 @@
             Add_btn.TabIndex = 12;
             Add_btn.Text = "追加";
             Add_btn.UseVisualStyleBackColor = true;
+            Add_btn.Click += Add_btn_Click;
             // 
             // clear_btn
             // 
@@ -153,6 +155,7 @@
             clear_btn.TabIndex = 13;
             clear_btn.Text = "クリア";
             clear_btn.UseVisualStyleBackColor = true;
+            clear_btn.Click += clear_btn_Click;
             // 
             // label1
             // 
