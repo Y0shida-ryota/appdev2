@@ -53,6 +53,7 @@
             name_listbtn.TabIndex = 1;
             name_listbtn.Text = "名簿";
             name_listbtn.UseVisualStyleBackColor = true;
+            name_listbtn.Click += name_listbtn_Click;
             // 
             // working_statusbtn
             // 

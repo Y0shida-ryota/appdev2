@@ -23,5 +23,12 @@ namespace シフト表_野中_隆斗
             form3.Show();
             this.Hide();
         }
+
+        private void name_listbtn_Click(object sender, EventArgs e)
+        {
+            Staff_Listki h = new Staff_Listki();
+            h.Show();
+            this.Hide();
+        }
     }
 }
