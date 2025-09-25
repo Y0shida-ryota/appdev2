@@ -55,7 +55,7 @@
             button1.TabIndex = 0;
             button1.Text = "マイページ";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+           // button1.Click += button1_Click;
             // 
             // Staff_Namebtn
             // 
@@ -65,7 +65,7 @@
             Staff_Namebtn.TabIndex = 1;
             Staff_Namebtn.Text = "名簿";
             Staff_Namebtn.UseVisualStyleBackColor = true;
-            Staff_Namebtn.Click += Staff_Namebtn_Click;
+           // Staff_Namebtn.Click += Staff_Namebtn_Click;
             // 
             // monthCalendar2
             // 
