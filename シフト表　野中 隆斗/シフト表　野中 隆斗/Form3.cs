@@ -213,5 +213,19 @@ namespace シフト表_野中_隆斗
                 MessageBox.Show("読み込みエラー: " + ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            this.Hide();
+        }
+
+        private void Staff_Namebtn_Click(object sender, EventArgs e)
+        {
+            Staff_Listki Staff_Name = new Staff_Listki();
+            Staff_Name.Show();
+            this.Hide();
+        }
     }
 }
