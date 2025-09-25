@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace シフト表_野中_隆斗
 {
-
     public partial class ShiftRequest : Form
     {
         public commonNonakaItem Item;
@@ -25,8 +24,8 @@ namespace シフト表_野中_隆斗
             Item.InitYearComboBox(this.yearComboBox, 2020, 2030);
             Item.InitMonthComboBox(this.mbMonth);
             int year = Item.GetSelectedValue(this.yearComboBox);
-           // int month = ComboBoxHelper.GetSelectedValue(cmbMonth);
-           // ComboBoxHelper.InitDayComboBox(cmbDay, year, month);
+            // int month = ComboBoxHelper.GetSelectedValue(cmbMonth);
+            // ComboBoxHelper.InitDayComboBox(cmbDay, year, month);
         }
     }
 }
