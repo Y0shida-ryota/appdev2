@@ -19,6 +19,7 @@ namespace シフト表_野中_隆斗.Staff_List
         }
         public DataTable Getstaff()
         {
+            
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -32,3 +33,4 @@ namespace シフト表_野中_隆斗.Staff_List
 
     }
 }
+
