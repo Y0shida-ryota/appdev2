@@ -1,6 +1,6 @@
 ﻿namespace シフト表_野中_隆斗
 {
-    partial class Staff_List
+    partial class Staff_Listki
     {
         /// <summary>
         /// Required designer variable.

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using Microsoft.Data.SqlClient;
 namespace シフト表_野中_隆斗
 {
     public partial class Form_Add : Form
