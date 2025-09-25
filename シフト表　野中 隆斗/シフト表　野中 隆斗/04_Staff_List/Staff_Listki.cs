@@ -13,13 +13,13 @@ namespace シフト表_野中_隆斗
 {
     public partial class Staff_Listki : Form
     {
-        private CreateStaff_list  StaffItem;
+        private CreateStaff_list StaffItem;
         private Staff_ListDB StaffDB;
         private DataTable DataTable;
-        private InStaff_List  InStaff;
+        private InStaff_List InStaff;
         public Staff_Listki()
         {
-           
+
             InitializeComponent();
 
             StaffItem = new CreateStaff_list(this.StaffGridView);//Staff_ListKiにあるDataGridViewを渡している
@@ -28,13 +28,20 @@ namespace シフト表_野中_隆斗
             StaffDB = new Staff_ListDB();
             DataTable = StaffDB.Getstaff();//nonakaテーブルからスタッフの情報を取得している
 
-            InStaff = new InStaff_List(this.StaffGridView,DataTable);//DataGridViewとnonakaテーブルの結果を渡している
+            InStaff = new InStaff_List(this.StaffGridView, DataTable);//DataGridViewとnonakaテーブルの結果を渡している
             InStaff.InStaff();//DataGriDViewの行にnonakaテーブルの結果を代入している。
         }
 
         private void Staff_List_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void RequestButton_Click(object sender, EventArgs e)
+        {
+            ShiftRequest shiftRequest = new ShiftRequest();
+            shiftRequest.Show();
+            this.Hide();
         }
     }
 }

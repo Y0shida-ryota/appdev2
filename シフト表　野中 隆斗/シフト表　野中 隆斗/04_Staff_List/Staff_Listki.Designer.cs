@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             StaffGridView = new DataGridView();
+            RequestButton = new Button();
             ((System.ComponentModel.ISupportInitialize)StaffGridView).BeginInit();
             SuspendLayout();
             // 
@@ -41,13 +42,24 @@
             StaffGridView.Size = new Size(1117, 782);
             StaffGridView.TabIndex = 0;
             // 
-            // Staff_List
+            // RequestButton
+            // 
+            RequestButton.Location = new Point(67, 345);
+            RequestButton.Name = "RequestButton";
+            RequestButton.Size = new Size(137, 178);
+            RequestButton.TabIndex = 1;
+            RequestButton.Text = "依頼";
+            RequestButton.UseVisualStyleBackColor = true;
+            RequestButton.Click += RequestButton_Click;
+            // 
+            // Staff_Listki
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1681, 1086);
+            Controls.Add(RequestButton);
             Controls.Add(StaffGridView);
-            Name = "Staff_List";
+            Name = "Staff_Listki";
             Text = "Staff_List";
             Load += Staff_List_Load;
             ((System.ComponentModel.ISupportInitialize)StaffGridView).EndInit();
@@ -57,5 +69,6 @@
         #endregion
 
         private DataGridView StaffGridView;
+        private Button RequestButton;
     }
 }
