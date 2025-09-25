@@ -34,6 +34,7 @@
             ID_txt = new TextBox();
             PS_txt = new TextBox();
             label3 = new Label();
+            Nolabel = new Label();
             SuspendLayout();
             // 
             // button1
@@ -81,16 +82,28 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(356, 37);
+            label3.Location = new Point(25, 35);
             label3.Name = "label3";
             label3.Size = new Size(0, 25);
             label3.TabIndex = 5;
+            // 
+            // Nolabel
+            // 
+            Nolabel.AutoSize = true;
+            Nolabel.ForeColor = Color.Brown;
+            Nolabel.Location = new Point(295, 45);
+            Nolabel.Name = "Nolabel";
+            Nolabel.Size = new Size(175, 25);
+            Nolabel.TabIndex = 6;
+            Nolabel.Text = "入力が正しくありません";
+            Nolabel.Visible = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(Nolabel);
             Controls.Add(label3);
             Controls.Add(PS_txt);
             Controls.Add(ID_txt);
@@ -111,5 +124,6 @@
         private TextBox ID_txt;
         private TextBox PS_txt;
         private Label label3;
+        private Label Nolabel;
     }
 }
