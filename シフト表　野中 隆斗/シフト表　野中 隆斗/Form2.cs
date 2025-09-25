@@ -26,8 +26,8 @@ namespace シフト表_野中_隆斗
 
         private void name_listbtn_Click(object sender, EventArgs e)
         {
-            Staff_Listki h = new Staff_Listki();
-            h.Show();
+            Staff_Listki Staff_Name = new Staff_Listki();
+            Staff_Name.Show();
             this.Hide();
         }
     }
