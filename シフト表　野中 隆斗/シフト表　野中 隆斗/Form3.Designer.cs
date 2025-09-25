@@ -103,7 +103,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "00", "15", "30" });
+            comboBox3.Items.AddRange(new object[] { "00", "15", "30", "45" });
             comboBox3.Location = new Point(641, 391);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(58, 33);
@@ -121,7 +121,7 @@
             // comboBox5
             // 
             comboBox5.FormattingEnabled = true;
-            comboBox5.Items.AddRange(new object[] { "00", "15", "30" });
+            comboBox5.Items.AddRange(new object[] { "00", "15", "30", "45" });
             comboBox5.Location = new Point(843, 389);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(58, 33);
