@@ -22,7 +22,7 @@ namespace シフト表_野中_隆斗
         private void Save_btn_Click(object sender, EventArgs e)
         {
             DateTime selectedDate = monthCalendar2.SelectionStart;
-            label4.Text = selectedDate.ToString("yyyy年MM月dd日");
+            label4.Text = selectedDate.ToString("yyyy/MM/dd/");
         }
 
         private void LoadStaffToComboBox()
@@ -65,13 +65,36 @@ namespace シフト表_野中_隆斗
 
         }
 
-       
+
 
         private void Staff_Namebtn_Click(object sender, EventArgs e)
         {
             Staff_Listki Staff_Name = new Staff_Listki();
             Staff_Name.Show();
             this.Hide();
+        }
+
+        private void Add_btn_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += comboBox1.Text + " " + comboBox2.Text + ":" + comboBox3.Text + "～" + comboBox4.Text + ":" + comboBox5.Text + Environment.NewLine;
+        }
+
+        private void deletion_btn_Click(object sender, EventArgs e)
+        {
+            int lineIndex = textBox1.GetLineFromCharIndex(textBox1.SelectionStart);
+            string[] lines = textBox1.Lines;
+
+            if (lineIndex >= 0 && lineIndex < lines.Length)
+            {
+                List<string> lineList = lines.ToList();
+                lineList.RemoveAt(lineIndex);
+                textBox1.Lines = lineList.ToArray();
+            }
+        }
+
+        private void clear_btn_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
         }
     }
 }
