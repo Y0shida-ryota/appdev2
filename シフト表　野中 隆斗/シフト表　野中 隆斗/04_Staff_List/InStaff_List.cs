@@ -18,6 +18,7 @@ namespace シフト表_野中_隆斗.Staff_List
         }
         public void InStaff()
         {
+           
             Staff_List.Rows.Clear(); // 既存行をクリア
             foreach (DataRow row in StaffDate.Rows)
             {
@@ -29,6 +30,7 @@ namespace シフト表_野中_隆斗.Staff_List
                 Staff_List.Rows[rowIndex].Cells["bank_acconunt"].Value = row["bank_acconunt"];
                 Staff_List.Rows[rowIndex].Cells["address"].Value = row["address"];
                 Staff_List.Rows[rowIndex].Cells["how"].Value = row["how"];
+               ;
             }
         }
     }
