@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            button2 = new Button();
+            Staff_Namebtn = new Button();
             monthCalendar2 = new MonthCalendar();
             Save_btn = new Button();
             textBox1 = new TextBox();
@@ -55,15 +55,17 @@
             button1.TabIndex = 0;
             button1.Text = "マイページ";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // button2
+            // Staff_Namebtn
             // 
-            button2.Location = new Point(12, 117);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 57);
-            button2.TabIndex = 1;
-            button2.Text = "名簿";
-            button2.UseVisualStyleBackColor = true;
+            Staff_Namebtn.Location = new Point(12, 131);
+            Staff_Namebtn.Name = "Staff_Namebtn";
+            Staff_Namebtn.Size = new Size(112, 57);
+            Staff_Namebtn.TabIndex = 1;
+            Staff_Namebtn.Text = "名簿";
+            Staff_Namebtn.UseVisualStyleBackColor = true;
+            Staff_Namebtn.Click += Staff_Namebtn_Click;
             // 
             // monthCalendar2
             // 
@@ -215,7 +217,7 @@
             Controls.Add(textBox1);
             Controls.Add(Save_btn);
             Controls.Add(monthCalendar2);
-            Controls.Add(button2);
+            Controls.Add(Staff_Namebtn);
             Controls.Add(button1);
             Name = "Form3";
             Text = "シフト設定";
@@ -226,7 +228,7 @@
         #endregion
 
         private Button button1;
-        private Button button2;
+        private Button Staff_Namebtn;
         private MonthCalendar monthCalendar2;
         private Button Save_btn;
         private TextBox textBox1;

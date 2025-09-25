@@ -63,6 +63,7 @@
             working_statusbtn.TabIndex = 2;
             working_statusbtn.Text = "勤務状況";
             working_statusbtn.UseVisualStyleBackColor = true;
+            working_statusbtn.Click += working_statusbtn_Click;
             // 
             // notificationbtn
             // 

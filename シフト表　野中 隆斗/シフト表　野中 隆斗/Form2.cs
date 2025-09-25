@@ -30,5 +30,13 @@ namespace シフト表_野中_隆斗
             Staff_Name.Show();
             this.Hide();
         }
+
+        private void working_statusbtn_Click(object sender, EventArgs e)
+        {
+            Form_working_status Working = new Form_working_status();
+            Working.Show();
+            this.Hide();
+
+        }
     }
 }
