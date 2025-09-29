@@ -33,7 +33,7 @@ namespace シフト表_野中_隆斗
             this.SMinTime = SMinTime;
             this.OHTime = OHTime;
             this.OMinTime = OMinTime;
-           
+            
         }
         public void InitializeComboBoxes()//年月日にちを指定するコンボボックスの中身を指定する
         {
@@ -120,7 +120,7 @@ namespace シフト表_野中_隆斗
             }
             monthComboBox.SelectedIndex = 0;
         }
-        public  int GetSelectedValue(ComboBox comboBox)
+        public static int GetSelectedValue(ComboBox comboBox)
         {
             if (comboBox.SelectedItem is NonakaItem item)
                 return item.Value;

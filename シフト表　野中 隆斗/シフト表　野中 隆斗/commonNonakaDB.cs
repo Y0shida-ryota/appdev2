@@ -7,12 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using static Azure.Core.HttpHeader;
+using static シフト表_野中_隆斗.commonNonakaItem;
 
 namespace シフト表_野中_隆斗
 {
     public class commonNonakaDB
 
     {
+       
         private string connectionString;
         private ComboBox IDComboBox;
         private Label NameLabel;
@@ -21,23 +23,27 @@ namespace シフト表_野中_隆斗
             this.connectionString = DBHelper.connectionstring;
             this.IDComboBox = IDComboBox;
             this.NameLabel = NameLabel;
-            IDName(this.IDComboBox);
+            IDName(IDComboBox);
             this.IDComboBox.SelectedIndexChanged += (s, e) => Nameevent();
         }
         public void IDName(ComboBox IDComboBox)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                //DataTable IDTable = new DataTable();
+                IDComboBox.Items.Clear();
                 String sql = "SELECT staff_id FROM staff ";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    IDComboBox.Items.Add(reader["staff_id"].ToString());
+                    IDComboBox.Items.Add(new NonakaItem
+                    {
+                        Value = Convert.ToInt32(reader["staff_id"]),
+                        Text = reader["staff_id"].ToString()
+                    });
                 }
-
+                IDComboBox.SelectedIndex = 0;
             }
         }
         public void Nameevent()
@@ -45,9 +51,9 @@ namespace シフト表_野中_隆斗
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 // 選択されたIDを取得
-                string selectedId = IDComboBox.SelectedItem.ToString();
+                int selectedId = ((NonakaItem)IDComboBox.SelectedItem).Value;
 
-                string sql = "SELECT staff_name FROM staff WHERE staff_id = @staff_id"; // ← スペルミス修正（WH;ERE → WHERE）
+                string sql = "SELECT staff_name FROM staff WHERE staff_id = @staff_id"; 
                 conn.Open();
 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -67,6 +73,12 @@ namespace シフト表_野中_隆斗
                 }
 
             }
+        }
+        public static int GetID(ComboBox IDComboBox)
+        {
+            if (IDComboBox.SelectedItem is NonakaItem item)
+                return item.Value;
+            return 2; // 取得できなかった場合
         }
     }
 }
