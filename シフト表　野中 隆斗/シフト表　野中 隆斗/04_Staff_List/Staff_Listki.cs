@@ -74,6 +74,9 @@ namespace シフト表_野中_隆斗
 
         private void edit_Btn_Click(object sender, EventArgs e)
         {
+            save_Btn.Visible = true;
+            back_Btn.Visible = true;
+
             StaffGridView.Columns[1].ReadOnly = false;
             StaffGridView.Columns[2].ReadOnly = false;
             StaffGridView.Columns[3].ReadOnly = false;
@@ -136,6 +139,8 @@ namespace シフト表_野中_隆斗
                 }
 
                 MessageBox.Show("変更を保存しました。", "保存完了", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                save_Btn.Visible = false;
+                back_Btn.Visible = false;
             }
             catch (Exception ex)
             {
@@ -159,6 +164,9 @@ namespace シフト表_野中_隆斗
             StaffGridView.Columns[4].ReadOnly = true;
             StaffGridView.Columns[5].ReadOnly = true;
             StaffGridView.Columns[6].ReadOnly = true;
+
+            save_Btn.Visible = false;
+            back_Btn.Visible = false;
         }
     }
 }
