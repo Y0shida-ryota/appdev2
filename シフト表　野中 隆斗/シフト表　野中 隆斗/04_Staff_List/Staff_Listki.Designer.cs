@@ -117,6 +117,7 @@
             save_Btn.TabIndex = 7;
             save_Btn.Text = "編集内容の保存";
             save_Btn.UseVisualStyleBackColor = true;
+            save_Btn.Visible = false;
             save_Btn.Click += save_Btn_Click;
             // 
             // back_Btn
@@ -127,6 +128,7 @@
             back_Btn.TabIndex = 7;
             back_Btn.Text = "元に戻す";
             back_Btn.UseVisualStyleBackColor = true;
+            back_Btn.Visible = false;
             back_Btn.Click += back_Btn_Click;
             // 
             // Staff_Listki
