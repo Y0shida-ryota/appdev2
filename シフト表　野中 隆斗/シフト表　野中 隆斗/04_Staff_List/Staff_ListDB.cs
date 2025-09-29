@@ -27,6 +27,7 @@ namespace シフト表_野中_隆斗.Staff_List
                 string getStaff = "SELECT * FROM staff ";
                 SqlDataAdapter getStaffCmd = new SqlDataAdapter(getStaff, conn);
                 getStaffCmd.Fill(StaffData);
+                StaffData.PrimaryKey = new DataColumn[] { StaffData.Columns["StaffID"] };
                 return StaffData;
             }
         }
