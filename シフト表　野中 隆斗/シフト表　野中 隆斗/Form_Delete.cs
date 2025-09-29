@@ -11,7 +11,7 @@ using Microsoft.Data.SqlClient;
 
 namespace シフト表_野中_隆斗
 {
-    public partial class Form_Delete : Form
+    public partial class Form_Delete : System.Windows.Forms.Form
     {
         public Form_Delete()
         {

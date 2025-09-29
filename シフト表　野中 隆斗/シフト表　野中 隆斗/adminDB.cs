@@ -13,8 +13,8 @@ namespace シフト表_野中_隆斗
         private string connectionString;
         private int admincount;
         private Label Nolabel;
-        private Form Form1;
-        public adminDB(Label Nolabel,Form Form1)
+        private System.Windows.Forms.Form Form1;
+        public adminDB(Label Nolabel, System.Windows.Forms.Form Form1)
         {
             this.connectionString = DBHelper.connectionstring;
             this.Nolabel = Nolabel;
@@ -38,7 +38,7 @@ namespace シフト表_野中_隆斗
 
                         this.admincount=0;
                         this.Nolabel.Visible = false;
-                        Form2 form2 = new Form2();
+                        Form_manager_dashboard form2 = new Form_manager_dashboard();
                         form2.Show();
                         this.Form1.Hide();
                     }

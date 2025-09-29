@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace シフト表_野中_隆斗
 {
 
-    public partial class ShiftRequest : Form
+    public partial class ShiftRequest : System.Windows.Forms.Form
     {
        
         public commonNonakaItem Item;

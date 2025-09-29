@@ -9,9 +9,9 @@ using Microsoft.Data.SqlClient;
 
 namespace シフト表_野中_隆斗
 {
-    public partial class Form3 : Form
+    public partial class Form : System.Windows.Forms.Form
     {
-        public Form3()
+        public Form()
         {
             InitializeComponent();
             LoadStaffToComboBox();
@@ -216,7 +216,7 @@ namespace シフト表_野中_隆斗
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Form_manager_dashboard form2 = new Form_manager_dashboard();
             form2.Show();
             this.Hide();
         }
