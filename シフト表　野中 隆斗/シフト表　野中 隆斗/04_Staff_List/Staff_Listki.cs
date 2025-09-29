@@ -43,7 +43,6 @@ namespace シフト表_野中_隆斗
         {
             ShiftRequest shiftRequest = new ShiftRequest();
             shiftRequest.Show();
-            this.Hide();
         }
 
         private void mypage_Btn_Click(object sender, EventArgs e)
