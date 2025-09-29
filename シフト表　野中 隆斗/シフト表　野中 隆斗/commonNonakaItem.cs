@@ -9,12 +9,47 @@ namespace シフト表_野中_隆斗
 {
     public class commonNonakaItem//コンボボックスの中身を指定する共通クラス
     {
-        public int Value { get; set; }      // 実際に使う数字
-        public string Text { get; set; }    // 表示用
-                                            //表示したい内容と中にもう値を分かる場合get setを使わなくてはならない
-        public override string ToString() => Text; // ComboBoxに表示される文字
-    
-   
+      
+        public class NonakaItem
+        {
+            public int Value { get; set; }
+            public string Text { get; set; }
+
+            public override string ToString() => Text;
+        }
+        private ComboBox yearComboBox;
+        private ComboBox mbMonth;
+        private ComboBox cmbDay;
+        private ComboBox SHTime;
+        private ComboBox SMinTime;
+        private ComboBox OHTime;
+        private ComboBox OMinTime;
+        public commonNonakaItem(ComboBox yearComboBox, ComboBox mbMonth, ComboBox cmbDay, ComboBox SHTime, ComboBox SMinTime, ComboBox OHTime, ComboBox OMinTime)
+        {
+           this.yearComboBox = yearComboBox;
+            this.mbMonth = mbMonth;
+            this.cmbDay = cmbDay;
+            this.SHTime = SHTime;
+            this.SMinTime = SMinTime;
+            this.OHTime = OHTime;
+            this.OMinTime = OMinTime;
+           
+        }
+        public void InitializeComboBoxes()//年月日にちを指定するコンボボックスの中身を指定する
+        {
+
+            InitYearComboBox(this.yearComboBox, 2020, 2030);
+            InitMonthComboBox(this.mbMonth);
+            int year = GetSelectedValue(this.yearComboBox);
+            int month = GetSelectedValue(this.mbMonth);
+            InitDayComboBox(cmbDay, year, month);
+            InHTime(this.SHTime);
+            InMinTime(this.SMinTime);
+            InHTime(this.OHTime);
+            InMinTime(this.OMinTime);
+
+        }
+
         public  void InitDayComboBox(ComboBox dayComboBox, int? year, int? month)//?入るかもしれない
         {
             dayComboBox.Items.Clear();
@@ -27,7 +62,7 @@ namespace シフト表_野中_隆斗
             int Day = DateTime.DaysInMonth(year.Value, month.Value);//Valueがいる外部クラスで判定するときに便利
             for (int i = 1; i <= Day; i++)
             {
-                dayComboBox.Items.Add(new commonNonakaItem { Value = i, Text = i.ToString()});
+                dayComboBox.Items.Add(new NonakaItem { Value = i, Text = i.ToString()});
             }
             dayComboBox.SelectedIndex = DateTime.Now.Day - 1;
         }
@@ -36,18 +71,18 @@ namespace シフト表_野中_隆斗
             monthComboBox.Items.Clear();
             for (int i = 1; i <= 12; i++)
             {
-                monthComboBox.Items.Add(new commonNonakaItem { Value = i, Text = i.ToString() });
+                monthComboBox.Items.Add(new NonakaItem { Value = i, Text = i.ToString() });
             }
             monthComboBox.SelectedIndex = DateTime.Now.Month - 1;
         }
         public  void InitYearComboBox(ComboBox yearComboBox, int startYear, int yearsAhead)
         {
             yearComboBox.Items.Clear();
-            commonNonakaItem selectedItem = null;
+            NonakaItem selectedItem = null;
 
             for (int y = startYear; y <= DateTime.Now.Year + yearsAhead; y++)
             {
-                var item = new commonNonakaItem { Value = y, Text = y.ToString() };
+                var item = new NonakaItem { Value = y, Text = y.ToString() };
                 yearComboBox.Items.Add(item);
 
                 // 現在の年と一致するComboItemを保持
@@ -61,11 +96,11 @@ namespace シフト表_野中_隆斗
         public  void InHTime(ComboBox monthComboBox)
         {
             monthComboBox.Items.Clear();
-            for (int i = 1; i <= 24; i++)
+            for (int i = 9; i <= 23; i++)
             {
-                monthComboBox.Items.Add(new commonNonakaItem { Value = i, Text = i.ToString() });
+                monthComboBox.Items.Add(new NonakaItem { Value = i, Text = i.ToString() });
             }
-            monthComboBox.SelectedIndex = DateTime.Now.Month - 1;
+            monthComboBox.SelectedIndex =0;
         }
         public  void InMinTime(ComboBox monthComboBox)
         {
@@ -75,19 +110,19 @@ namespace シフト表_野中_隆斗
             {
                 if (i == 0)
                 {
-                    monthComboBox.Items.Add(new commonNonakaItem { Value = i, Text = i+"0" });
+                    monthComboBox.Items.Add(new NonakaItem { Value = i, Text = i+"0" });
                 }
                 else
                 {
-                    monthComboBox.Items.Add(new commonNonakaItem { Value = i, Text = i.ToString() });
+                    monthComboBox.Items.Add(new NonakaItem { Value = i, Text = i.ToString() });
                 }
               
             }
-            monthComboBox.SelectedIndex = DateTime.Now.Month - 1;
+            monthComboBox.SelectedIndex = 0;
         }
         public  int GetSelectedValue(ComboBox comboBox)
         {
-            if (comboBox.SelectedItem is commonNonakaItem item)
+            if (comboBox.SelectedItem is NonakaItem item)
                 return item.Value;
             return 9; // 取得できなかった場合
         }
