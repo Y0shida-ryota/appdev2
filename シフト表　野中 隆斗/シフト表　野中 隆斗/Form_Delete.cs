@@ -26,7 +26,9 @@ namespace シフト表_野中_隆斗
         // キャンセルボタン
         private void cencel_Btn_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            Staff_Listki Staff_Name = new Staff_Listki();
+            Staff_Name.Show();
+            this.Hide();
         }
 
         // 削除ボタン
