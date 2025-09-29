@@ -44,7 +44,7 @@ namespace シフト表_野中_隆斗
                     }
                     else
                     {
-                        MessageBox.Show("IDまたはパスワードたちがいます");
+                        MessageBox.Show("IDまたはパスワードが違います");
                         Judgment();
                     }
 
@@ -65,7 +65,7 @@ namespace シフト表_野中_隆斗
         public void Judgment()
         {
            
-            if(this.admincount <= 3)
+            if(this.admincount >= 3)
             {
                 MessageBox.Show("3回間違えたのでアプリを終了します。");
                 this.Form1.Close();
