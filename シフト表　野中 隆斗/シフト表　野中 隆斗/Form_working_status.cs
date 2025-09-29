@@ -52,7 +52,7 @@ namespace シフト表_野中_隆斗
                     sh.shift_date = @date
                 ORDER BY 
                     sh.start_time;
-";
+            ";
 
 
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
