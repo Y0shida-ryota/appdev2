@@ -1,6 +1,6 @@
 ﻿namespace シフト表_野中_隆斗
 {
-    partial class Form3
+    partial class Form
     {
         /// <summary>
         /// Required designer variable.

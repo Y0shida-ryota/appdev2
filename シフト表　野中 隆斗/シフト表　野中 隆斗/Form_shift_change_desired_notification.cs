@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace シフト表_野中_隆斗
 {
-    public partial class Form_shift_change_desired_notification : Form
+    public partial class Form_shift_change_desired_notification : System.Windows.Forms.Form
     {
        
         public Form_shift_change_desired_notification()

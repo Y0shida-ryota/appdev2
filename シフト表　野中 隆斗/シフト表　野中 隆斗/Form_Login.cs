@@ -1,10 +1,10 @@
 namespace シフト表_野中_隆斗
 {
-    public partial class Form1 : Form
+    public partial class Form_Login : System.Windows.Forms.Form
     {
         private int loginFailCount = 0;
         adminDB verification;
-        public Form1()
+        public Form_Login()
         {
             InitializeComponent();
             verification = new adminDB(this.Nolabel,this);

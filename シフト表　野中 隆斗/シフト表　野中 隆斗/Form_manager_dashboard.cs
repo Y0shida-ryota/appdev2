@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace シフト表_野中_隆斗
 {
-    public partial class Form2 : Form
+    public partial class Form_manager_dashboard : System.Windows.Forms.Form
     {
-        public Form2()
+        public Form_manager_dashboard()
         {
             InitializeComponent();
         }
 
         private void Shift_settingbtn_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+            Form form3 = new Form();
             form3.Show();
             this.Hide();
         }

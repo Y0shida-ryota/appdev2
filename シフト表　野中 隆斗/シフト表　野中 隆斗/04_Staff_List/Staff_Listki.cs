@@ -12,7 +12,7 @@ using シフト表_野中_隆斗.Staff_List;
 
 namespace シフト表_野中_隆斗
 {
-    public partial class Staff_Listki : Form
+    public partial class Staff_Listki : System.Windows.Forms.Form
     {
         private CreateStaff_list StaffItem;
         private Staff_ListDB StaffDB;
@@ -47,14 +47,14 @@ namespace シフト表_野中_隆斗
 
         private void mypage_Btn_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Form_manager_dashboard form2 = new Form_manager_dashboard();
             form2.Show();
             this.Hide();
         }
 
         private void setting_Btn_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+            Form form3 = new Form();
             form3.Show();
             this.Hide();
         }
