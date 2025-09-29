@@ -37,10 +37,11 @@ namespace シフト表_野中_隆斗
 
         }
 
-        private void Add_Btn_Click(object sender, EventArgs e)
+        private void RequestButton_Click(object sender, EventArgs e)
         {
-            Form_Add form_Add = new Form_Add();
-            form_Add.Show();
+            ShiftRequest shiftRequest = new ShiftRequest();
+            shiftRequest.Show();
+            this.Hide();
         }
     }
 }

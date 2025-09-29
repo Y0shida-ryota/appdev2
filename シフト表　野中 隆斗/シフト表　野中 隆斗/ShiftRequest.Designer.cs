@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             namelabel = new Label();
-            comboBox1 = new ComboBox();
+            IDBox = new ComboBox();
             yearComboBox = new ComboBox();
             mbMonth = new ComboBox();
             cmbDay = new ComboBox();
+            SHTime = new ComboBox();
+            SMinTime = new ComboBox();
+            OHTime = new ComboBox();
+            OMinTime = new ComboBox();
             SuspendLayout();
             // 
             // namelabel
@@ -44,13 +48,13 @@
             namelabel.TabIndex = 0;
             namelabel.Text = "dddd";
             // 
-            // comboBox1
+            // IDBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(315, 89);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(166, 33);
-            comboBox1.TabIndex = 1;
+            IDBox.FormattingEnabled = true;
+            IDBox.Location = new Point(346, 89);
+            IDBox.Name = "IDBox";
+            IDBox.Size = new Size(166, 33);
+            IDBox.TabIndex = 1;
             // 
             // yearComboBox
             // 
@@ -76,15 +80,51 @@
             cmbDay.Size = new Size(166, 33);
             cmbDay.TabIndex = 4;
             // 
+            // SHTime
+            // 
+            SHTime.FormattingEnabled = true;
+            SHTime.Location = new Point(132, 270);
+            SHTime.Name = "SHTime";
+            SHTime.Size = new Size(75, 33);
+            SHTime.TabIndex = 5;
+            // 
+            // SMinTime
+            // 
+            SMinTime.FormattingEnabled = true;
+            SMinTime.Location = new Point(315, 270);
+            SMinTime.Name = "SMinTime";
+            SMinTime.Size = new Size(75, 33);
+            SMinTime.TabIndex = 6;
+            // 
+            // OHTime
+            // 
+            OHTime.FormattingEnabled = true;
+            OHTime.Location = new Point(522, 270);
+            OHTime.Name = "OHTime";
+            OHTime.Size = new Size(75, 33);
+            OHTime.TabIndex = 7;
+            // 
+            // OMinTime
+            // 
+            OMinTime.FormattingEnabled = true;
+            OMinTime.Location = new Point(735, 270);
+            OMinTime.Name = "OMinTime";
+            OMinTime.Size = new Size(75, 33);
+            OMinTime.TabIndex = 8;
+            // 
             // ShiftRequest
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1002, 582);
+            Controls.Add(OMinTime);
+            Controls.Add(OHTime);
+            Controls.Add(SMinTime);
+            Controls.Add(SHTime);
             Controls.Add(cmbDay);
             Controls.Add(mbMonth);
             Controls.Add(yearComboBox);
-            Controls.Add(comboBox1);
+            Controls.Add(IDBox);
             Controls.Add(namelabel);
             Name = "ShiftRequest";
             Text = "ShiftRequest";
@@ -96,9 +136,13 @@
         #endregion
 
         private Label namelabel;
-        private ComboBox comboBox1;
+        private ComboBox IDBox;
         private ComboBox yearComboBox;
         private ComboBox mbMonth;
         private ComboBox cmbDay;
+        private ComboBox SHTime;
+        private ComboBox SMinTime;
+        private ComboBox OHTime;
+        private ComboBox OMinTime;
     }
 }
