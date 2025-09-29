@@ -14,6 +14,7 @@ namespace シフト表_野中_隆斗
         private int admincount;
         private Label Nolabel;
         private Form Form1;
+       
         public adminDB(Label Nolabel,Form Form1)
         {
             this.connectionString = DBHelper.connectionstring;
@@ -30,9 +31,14 @@ namespace シフト表_野中_隆斗
                 try
                 {
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("staff_id", ID);
-                    cmd.Parameters.AddWithValue("admin_password", Password);
-                    int count = (int)cmd.ExecuteScalar();
+                    cmd.Parameters.AddWithValue("@staff_id", ID);
+                    cmd.Parameters.AddWithValue("@admin_password", Password);
+                    object result = cmd.ExecuteScalar();//Nullかもしれないから一回objectに入れる
+                    int count = 0;
+                    if(result != null)
+                    {
+                        count = 1;
+                    }
                     if (count > 0)
                     {
 
@@ -64,9 +70,11 @@ namespace シフト表_野中_隆斗
         }
         public void Judgment()
         {
-           
-            if(this.admincount >= 3)
+            this.admincount++;
+            this.Nolabel.Visible = true;
+            if (this.admincount > 2)
             {
+
                 MessageBox.Show("3回間違えたのでアプリを終了します。");
                 this.Form1.Close();
             }
