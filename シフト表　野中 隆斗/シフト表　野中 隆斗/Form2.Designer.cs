@@ -83,6 +83,7 @@
             END_btn.TabIndex = 4;
             END_btn.Text = "終了";
             END_btn.UseVisualStyleBackColor = true;
+            END_btn.Click += END_btn_Click;
             // 
             // Form2
             // 

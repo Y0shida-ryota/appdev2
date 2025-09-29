@@ -45,5 +45,10 @@ namespace シフト表_野中_隆斗
             Shift_Change.Show();
             this.Hide();
         }
+
+        private void END_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
