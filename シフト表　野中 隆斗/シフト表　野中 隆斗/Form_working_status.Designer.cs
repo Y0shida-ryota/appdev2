@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             returnbtn = new Button();
             dataGridView1 = new DataGridView();
             timelabel = new Label();
+            label1 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -62,11 +65,25 @@
             timelabel.TabIndex = 2;
             timelabel.Text = " ";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(429, 38);
+            label1.Name = "label1";
+            label1.Size = new Size(17, 25);
+            label1.TabIndex = 3;
+            label1.Text = " ";
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // Form_working_status
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(timelabel);
             Controls.Add(dataGridView1);
             Controls.Add(returnbtn);
@@ -82,5 +99,7 @@
         private Button returnbtn;
         private DataGridView dataGridView1;
         private Label timelabel;
+        private Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
