@@ -67,9 +67,9 @@
             // 
             // notificationbtn
             // 
-            notificationbtn.Location = new Point(460, 26);
+            notificationbtn.Location = new Point(450, 26);
             notificationbtn.Name = "notificationbtn";
-            notificationbtn.Size = new Size(159, 34);
+            notificationbtn.Size = new Size(169, 34);
             notificationbtn.TabIndex = 3;
             notificationbtn.Text = "シフト変更希望通知";
             notificationbtn.UseVisualStyleBackColor = true;
