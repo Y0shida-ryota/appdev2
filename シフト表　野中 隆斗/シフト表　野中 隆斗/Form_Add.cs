@@ -64,7 +64,9 @@ namespace シフト表_野中_隆斗
 
                         // データの保存が成功したことをユーザーに通知します。
                         MessageBox.Show($"データが正常に保存されました。", "完了");
-                        this.Close();
+                        Staff_Listki Staff_Name = new Staff_Listki();
+                        Staff_Name.Show();
+                        this.Hide();
                     }
                 }
                 catch (SqlException ex)
@@ -82,7 +84,9 @@ namespace シフト表_野中_隆斗
 
         private void cancel_Btn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Staff_Listki Staff_Name = new Staff_Listki();
+            Staff_Name.Show();
+            this.Hide();
         }
     }
 }

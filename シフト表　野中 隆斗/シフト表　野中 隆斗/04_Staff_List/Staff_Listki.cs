@@ -43,6 +43,7 @@ namespace シフト表_野中_隆斗
         {
             ShiftRequest shiftRequest = new ShiftRequest();
             shiftRequest.Show();
+            this.Hide();
         }
 
         private void mypage_Btn_Click(object sender, EventArgs e)
@@ -63,12 +64,14 @@ namespace シフト表_野中_隆斗
         {
             Form_Add form_Add = new Form_Add();
             form_Add.Show();
+            this.Hide();
         }
 
         private void delete_Btn_Click(object sender, EventArgs e)
         {
             Form_Delete form_Delete = new Form_Delete();
             form_Delete.Show();
+            this.Hide();
         }
 
         private void edit_Btn_Click(object sender, EventArgs e)
