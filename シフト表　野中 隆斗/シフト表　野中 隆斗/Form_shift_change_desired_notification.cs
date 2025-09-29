@@ -12,9 +12,11 @@ namespace シフト表_野中_隆斗
 {
     public partial class Form_shift_change_desired_notification : Form
     {
+       
         public Form_shift_change_desired_notification()
         {
             InitializeComponent();
+           
         }
 
         private void Form_shift_change_desired_notification_Load(object sender, EventArgs e)
@@ -31,6 +33,9 @@ namespace シフト表_野中_隆斗
             dataGridView1.Columns.Add(checkColumn);
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridView1.Rows.Add("0100", "佐藤 太郎", "2025/07/01", "10:00～14:30", "休", true);
+            dataGridView1.Rows.Add("0101", "田中 華子", "2025/06/28", "15:00～20:00", "働", false);
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -38,7 +43,15 @@ namespace シフト表_野中_隆斗
             for (int i = dataGridView1.Rows.Count - 1; i >= 0; i--)
             {
                 DataGridViewRow row = dataGridView1.Rows[i];
-                if (Convert.ToBoolean(row.Cells["Confirmed"].Value) == true)
+                bool isChecked = false;
+
+               
+                if (row.Cells["Confirmed"].Value != null)
+                {
+                    isChecked = Convert.ToBoolean(row.Cells["Confirmed"].Value);
+                }
+
+                if (isChecked)
                 {
                     dataGridView1.Rows.RemoveAt(i);
                 }
