@@ -76,6 +76,7 @@
             // 
             PS_txt.Location = new Point(288, 170);
             PS_txt.Name = "PS_txt";
+            PS_txt.PasswordChar = '*';
             PS_txt.Size = new Size(234, 31);
             PS_txt.TabIndex = 4;
             // 

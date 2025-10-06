@@ -32,7 +32,7 @@ namespace シフト表_野中_隆斗
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Text = DateTime.Now.ToString("HH:mm:ss");
+            label1.Text = DateTime.Now.ToString("現在時刻:" + "HH:mm:ss");
         }
 
         private void LoadShiftData(DateTime selectedDate)
@@ -64,14 +64,22 @@ namespace シフト表_野中_隆斗
 
                 dataGridView1.DataSource = dt;
 
-                
+
                 if (dataGridView1.Columns.Count >= 3)
                 {
-                    dataGridView1.Columns[0].Width = 80;  
+                    dataGridView1.Columns[0].Width = 80;
                     dataGridView1.Columns[1].Width = 150;
-                    dataGridView1.Columns[2].Width = 150; 
+                    dataGridView1.Columns[2].Width = 150;
                 }
             }
+        }
+
+        private void Form_working_status_Load(object sender, EventArgs e)
+        {
+             
+        
+            label1.Text = DateTime.Now.ToString("現在時刻:" + "HH:mm");
+        
         }
     }
 }

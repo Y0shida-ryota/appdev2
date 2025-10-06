@@ -44,7 +44,7 @@ namespace シフト表_野中_隆斗
 
         private void END_btn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Application.Exit();
         }
     }
 }

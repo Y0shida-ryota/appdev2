@@ -92,7 +92,7 @@
             Controls.Add(namelabel);
             Controls.Add(ID_Lb);
             Name = "Form_Delete";
-            Text = "Form_Delete";
+            Text = "削除";
             ResumeLayout(false);
             PerformLayout();
         }

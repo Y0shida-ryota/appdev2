@@ -146,7 +146,7 @@
             Controls.Add(RequestButton);
             Controls.Add(StaffGridView);
             Name = "Staff_Listki";
-            Text = "Staff_List";
+            Text = "名簿";
             Load += Staff_List_Load;
             ((System.ComponentModel.ISupportInitialize)StaffGridView).EndInit();
             ResumeLayout(false);

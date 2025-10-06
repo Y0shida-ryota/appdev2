@@ -180,7 +180,7 @@
             Controls.Add(phonenumber_Lb);
             Controls.Add(name_Lb);
             Name = "Form_Add";
-            Text = "Form_Add";
+            Text = "追加";
             ResumeLayout(false);
             PerformLayout();
         }

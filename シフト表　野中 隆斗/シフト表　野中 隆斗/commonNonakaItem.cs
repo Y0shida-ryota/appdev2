@@ -47,7 +47,14 @@ namespace シフト表_野中_隆斗
             InMinTime(this.SMinTime);
             InHTime(this.OHTime);
             InMinTime(this.OMinTime);
-
+            this.yearComboBox.SelectedIndexChanged += ComboBox_YearOrMonthChanged;
+            mbMonth.SelectedIndexChanged += ComboBox_YearOrMonthChanged;
+        }
+        private void ComboBox_YearOrMonthChanged(object sender, EventArgs e)
+        {
+            int? year = commonNonakaItem.GetSelectedValue(yearComboBox);
+            int? month = commonNonakaItem.GetSelectedValue(mbMonth);
+            InitDayComboBox(cmbDay, year, month);
         }
 
         public  void InitDayComboBox(ComboBox dayComboBox, int? year, int? month)//?入るかもしれない
@@ -62,7 +69,7 @@ namespace シフト表_野中_隆斗
             int Day = DateTime.DaysInMonth(year.Value, month.Value);//Valueがいる外部クラスで判定するときに便利
             for (int i = 1; i <= Day; i++)
             {
-                dayComboBox.Items.Add(new NonakaItem { Value = i, Text = i.ToString()});
+                dayComboBox.Items.Add(new NonakaItem { Value = i, Text = i.ToString() + "日" });
             }
             dayComboBox.SelectedIndex = DateTime.Now.Day - 1;
         }
@@ -71,7 +78,7 @@ namespace シフト表_野中_隆斗
             monthComboBox.Items.Clear();
             for (int i = 1; i <= 12; i++)
             {
-                monthComboBox.Items.Add(new NonakaItem { Value = i, Text = i.ToString() });
+                monthComboBox.Items.Add(new NonakaItem { Value = i, Text = i.ToString() + "月" });
             }
             monthComboBox.SelectedIndex = DateTime.Now.Month - 1;
         }
@@ -126,6 +133,8 @@ namespace シフト表_野中_隆斗
                 return item.Value;
             return 9; // 取得できなかった場合
         }
+
+        
     }
 
 }
