@@ -31,9 +31,8 @@
             components = new System.ComponentModel.Container();
             returnbtn = new Button();
             dataGridView1 = new DataGridView();
-            timelabel = new Label();
-            label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -56,27 +55,17 @@
             dataGridView1.Size = new Size(576, 354);
             dataGridView1.TabIndex = 1;
             // 
-            // timelabel
+            // timer1
             // 
-            timelabel.AutoSize = true;
-            timelabel.Location = new Point(406, 30);
-            timelabel.Name = "timelabel";
-            timelabel.Size = new Size(17, 25);
-            timelabel.TabIndex = 2;
-            timelabel.Text = " ";
+            timer1.Tick += timer1_Tick;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(429, 38);
+            label1.Location = new Point(387, 34);
             label1.Name = "label1";
-            label1.Size = new Size(17, 25);
-            label1.TabIndex = 3;
-            label1.Text = " ";
-            // 
-            // timer1
-            // 
-            timer1.Tick += timer1_Tick;
+            label1.Size = new Size(0, 25);
+            label1.TabIndex = 2;
             // 
             // Form_working_status
             // 
@@ -84,11 +73,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
-            Controls.Add(timelabel);
             Controls.Add(dataGridView1);
             Controls.Add(returnbtn);
             Name = "Form_working_status";
-            Text = "Form_working_status";
+            Text = "勤務状況";
+            Load += Form_working_status_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -98,8 +87,7 @@
 
         private Button returnbtn;
         private DataGridView dataGridView1;
-        private Label timelabel;
-        private Label label1;
         private System.Windows.Forms.Timer timer1;
+        private Label label1;
     }
 }

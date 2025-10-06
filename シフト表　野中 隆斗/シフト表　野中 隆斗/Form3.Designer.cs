@@ -72,6 +72,7 @@
             monthCalendar2.Location = new Point(174, 72);
             monthCalendar2.Name = "monthCalendar2";
             monthCalendar2.TabIndex = 3;
+            monthCalendar2.DateChanged += monthCalendar2_DateChanged;
             // 
             // Save_btn
             // 
@@ -94,17 +95,18 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "" });
+            comboBox2.Items.AddRange(new object[] { "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "0" });
             comboBox2.Location = new Point(544, 391);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(58, 33);
             comboBox2.TabIndex = 7;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
             comboBox3.Items.AddRange(new object[] { "00", "15", "30", "45" });
-            comboBox3.Location = new Point(641, 391);
+            comboBox3.Location = new Point(641, 394);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(58, 33);
             comboBox3.TabIndex = 8;
@@ -112,11 +114,12 @@
             // comboBox4
             // 
             comboBox4.FormattingEnabled = true;
-            comboBox4.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" });
+            comboBox4.Items.AddRange(new object[] { "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "0" });
             comboBox4.Location = new Point(743, 389);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(58, 33);
             comboBox4.TabIndex = 9;
+            comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
             // 
             // comboBox5
             // 

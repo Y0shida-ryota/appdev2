@@ -36,13 +36,19 @@ namespace シフト表_野中_隆斗
         private void AddButton_Click(object sender, EventArgs e)
         {
             ShiftDB.ShiftDBIn(IDBox, yearComboBox, mbMonth, cmbDay, SHTime, SMinTime, OHTime, OMinTime);
+            Staff_Listki staff_Listki = new Staff_Listki();
+            staff_Listki.Show();
+            this.Close();
         }
 
         private void EndButton_Click(object sender, EventArgs e)
         {
-           Staff_Listki staff_Listki = new Staff_Listki();
+            Staff_Listki staff_Listki = new Staff_Listki();
             staff_Listki.Show();
             this.Close();
         }
+
+        
+
     }
 }

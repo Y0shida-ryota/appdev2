@@ -22,8 +22,7 @@ namespace シフト表_野中_隆斗
 
         private void Save_btn_Click(object sender, EventArgs e)
         {
-            DateTime selectedDate = monthCalendar2.SelectionStart;
-            label4.Text = selectedDate.ToString("yyyy/MM/dd");
+            MessageBox.Show("シフトをデータベースに登録しました！");
         }
 
         private void LoadStaffToComboBox()
@@ -75,6 +74,12 @@ namespace シフト表_野中_隆斗
                 return;
             }
 
+            if (comboBox2.Text == "" || comboBox3.Text == "" || comboBox4.Text == "" || comboBox5.Text == "")
+            {
+                MessageBox.Show("時間が設定されていません", "エラー");
+                return;
+            }
+
             int staffId = Convert.ToInt32(comboBox1.SelectedValue);
             string insertQuery = @"
                 INSERT INTO shift (shift_date, start_time, end_time, staff_id) 
@@ -93,7 +98,7 @@ namespace シフト表_野中_隆斗
                     conn.Open();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("シフトをデータベースに登録しました！");
+                    
                     LoadShiftForSelectedDate(); // 登録後に一覧再表示
                 }
             }
@@ -158,6 +163,7 @@ namespace シフト表_野中_隆斗
                     MessageBox.Show("削除処理でエラーが発生しました: " + ex.Message);
                 }
             }
+
         }
 
         private void clear_btn_Click(object sender, EventArgs e)
@@ -167,6 +173,8 @@ namespace シフト表_野中_隆斗
 
         private void monthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
         {
+            DateTime selectedDate = monthCalendar2.SelectionStart;
+            label4.Text = selectedDate.ToString("yyyy/MM/dd");
             LoadShiftForSelectedDate();
         }
 
@@ -224,6 +232,40 @@ namespace シフト表_野中_隆斗
             Staff_Listki Staff_Name = new Staff_Listki();
             Staff_Name.Show();
             this.Hide();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.Text == "0")
+            {
+                comboBox3.Items.Clear();
+                comboBox3.Items.Add("00");
+            }
+            else
+            {
+                comboBox3.Items.Clear();
+                comboBox3.Items.Add("00");
+                comboBox3.Items.Add("15");
+                comboBox3.Items.Add("30");
+                comboBox3.Items.Add("45");
+            }
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox4.Text == "0")
+            {
+                comboBox5.Items.Clear();
+                comboBox5.Items.Add("00");
+            }
+            else
+            {
+                comboBox5.Items.Clear();
+                comboBox5.Items.Add("00");
+                comboBox5.Items.Add("15");
+                comboBox5.Items.Add("30");
+                comboBox5.Items.Add("45");
+            }
         }
     }
 }

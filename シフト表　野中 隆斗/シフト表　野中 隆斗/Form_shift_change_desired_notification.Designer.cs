@@ -72,7 +72,7 @@
             Controls.Add(delete_btn);
             Controls.Add(button1);
             Name = "Form_shift_change_desired_notification";
-            Text = "Formシフト変更希望通知画面";
+            Text = "シフト変更希望通知画面";
             Load += Form_shift_change_desired_notification_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

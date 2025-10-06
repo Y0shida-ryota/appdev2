@@ -72,6 +72,7 @@
             yearComboBox.Name = "yearComboBox";
             yearComboBox.Size = new Size(166, 33);
             yearComboBox.TabIndex = 2;
+            //yearComboBox.SelectedIndexChanged += yearComboBox_SelectedIndexChanged;
             // 
             // mbMonth
             // 
@@ -80,6 +81,7 @@
             mbMonth.Name = "mbMonth";
             mbMonth.Size = new Size(166, 33);
             mbMonth.TabIndex = 3;
+            //mbMonth.SelectedIndexChanged += mbMonth_SelectedIndexChanged;
             // 
             // cmbDay
             // 
@@ -228,7 +230,7 @@
             Controls.Add(IDBox);
             Controls.Add(namelabel);
             Name = "ShiftRequest";
-            Text = "ShiftRequest";
+            Text = "依頼";
             Load += ShiftRequest_Load;
             ResumeLayout(false);
             PerformLayout();
